@@ -1,6 +1,6 @@
 /* Mach-O header parser. Supports both fat and thin Mach-O files.
    However, it will only interpret Mach-O files of the same
-   architecture as this binary.
+   endianness as this binary.
 
    (c)2022 Simon Urbanek - https://urbanek.nz
    License: MIT
@@ -90,7 +90,6 @@ SEXP macho(SEXP sFile, SEXP sArch) {
 
     if (magic == FAT_MAGIC || magic == FAT_CIGAM) {
 	uint32_t nfat_arch, native_offset = 0, fallback_offset = 0, target_offset = 0, desired_offset = 0, i = 0;
-	printf("Fat file\n");
 	if (fread(&nfat_arch, sizeof(nfat_arch), 1, f) != 1) {
 	    fclose(f);
 	    Rf_error("Cannot read number of fat archs");
