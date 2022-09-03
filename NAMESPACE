@@ -1,0 +1,2 @@
+useDynLib(MachO, macho)
+export(MachO_Info)

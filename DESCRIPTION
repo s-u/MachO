@@ -1,0 +1,7 @@
+Package: MachO
+Version: 0.1-0
+Title: Parsing Mach-O Format Files
+Author: Simon Urbanek <Simon.Urbanek@r-project.org>
+Maintainer: Simon Urbanek <Simon.Urbanek@r-project.org>
+Description: Parses Mach-O file format (including fat files) and returns resulting informatikon.
+License: MIT
